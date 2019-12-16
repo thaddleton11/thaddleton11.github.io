@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>T. Haddleton, Digital CV</title>
+    <meta name="description" content="T. Haddleton's Digital CV">
+    <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
+    <meta name="author" content="T. Haddleton">
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/th_style.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="tf-home">
+    <div class="overlay">
+        <div id="sticky-anchor"></div>
+        <nav id="tf-menu" class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="#">Welcome to my portfolio</a>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/dashboard#profile">Summary <i class="fa fa-fw fa-list-alt pull-right"></i></a></li>
+                                <li><a href="/dashboard#employment">Employment <i class="fa fa-fw fa-briefcase pull-right"></i></a></li>
+                                <li><a href="/dashboard#qualifications">Qualifications <i class="fa fa-fw fa-graduation-cap pull-right"></i></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/dashboard/examples">Example Work</a></li>
+
+
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <div class="content">
+                <h1>Tom Haddleton</h1>
+                <h3>LAMP stack developer
+                    <br />
+                    Android and iOS Web Apps</h3>
+                <br />
+                <a href="/dashboard#profile" class="btn btn-primary my-btn">See my Profile</a>
+                <a href="/dashboard/examples" class="btn btn-primary my-btn2">Portfolio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+<div class="section-title text-center">
+    <h1>Guest Check In iPad Application</h1>
+    <hr />
+</div>
+
+<div id="event-app">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/dashboard/examples" class="btn btn-default pull-right">Go Back <i class="fa fa-arrow-left"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>In order to digitally indicate the arrival of an attendee at an event, an in-house iPad app was created to solve this problem. The stipulations were it must work with multiple app
+                    operating at the same event and be able to continue working when an internet connection is not available.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <p>For the iOS app, the Glasgows Event App** was repurposed and rebranded appropriately. To perform the task itself, the app serves locally stored HTML, a necessity for offline use.
+                    The list of attendees is displayed via Bootstrap 3 and DataTables, a jQuery plug-in that paginates results and allows searching against the contents of the table. Modifications
+                    were made to DataTables to allow the content to be build through AJAX requests to the API and to add an addition column that would house a user hash and tick box that would begin
+                    registering a guest as arrived.</p>
+                <p>On each request, the API returns any changes that occurred after the last API key was issued to the app. This now will show the user the updated attending statuses of guests that
+                    have been performed by other staff members using the app.</p>
+                <p>To accommodate the offline functionality, IndexedDB client-side database was used to assist. Each API request is processed and saved into the database. When request fails to
+                    communicate with the server, the user is notified of the offline status, any further changes are saved locally and the app can continue to operate. Once a connection can be
+                    established again, any locally stored changes are pushed updating the remote database.</p>
+                <p>Accompanying the frontend is a PHP Slim 3 backend, with a MySQL and Doctrine ORM, which provides the API and administration system. &nbsp;The Bootstrap 4 admin system allows users
+                    to create new and edit guest lists, an associated login and to set configurations like a custom logo, light or dark mode, column names and columns to hide/display. There are also
+                    options to determine access dates and times and allow clients access to a slimmed down basic version. At anytime during the event, both admins and clients are able to download a
+                    CSV of the results if they so desire.</p>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="/img/examples/check-in/check-in-app.jpg" target="_blank" title="Event App Social Wall">
+                            <img src="/img/examples/check-in/check-in-app.jpg" class="img-thumbnail img-responsive" alt="Event App Social Wall" />
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_csv_uploader.png" target="_blank" title="Event App for iPhone">
+                            <img src="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_csv_uploader.png" class="img-thumbnail img-responsive" alt="Event App for iPhone" />
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_all.png" target="_blank" title="Event App iPad">
+                            <img src="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_all.png" class="img-thumbnail img-responsive" alt="Event App iPad" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_delegates_view_7f2c6608c6e847f8b9ce3aa987022efa33c085e8.png" target="_blank" title="Event App iPad">
+                            <img src="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_delegates_view_7f2c6608c6e847f8b9ce3aa987022efa33c085e8.png" class="img-thumbnail img-responsive" alt="Event App iPad" />
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_settings_7f2c6608c6e847f8b9ce3aa987022efa33c085e8.png" target="_blank" title="Event App iPad">
+                            <img src="/img/examples/check-in/dinner-checkin.glasgows.co.uk_admin_events_settings_7f2c6608c6e847f8b9ce3aa987022efa33c085e8.png" class="img-thumbnail img-responsive" alt="Event App iPad" />
+                        </a>
+                    </div>
+                </div>
+                <div class="app-social-wall img-responsive"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/dashboard/examples" class="btn btn-default pull-right">Go Back <i class="fa fa-arrow-left"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div style="margin:50px;"></div>
+
+
+<nav id="tf-footer">
+    <div class="container">
+        <div class="pull-left">
+
+        </div>
+        <div class="pull-right">
+            <ul class="social-media list-inline">
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                <li><a href="#"><span class="fa fa-behance"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="/js/modernizr.custom.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+
+
+
+<script src="/js/custom.js" type="text/javascript"></script>
+
+<!-- Javascripts
+    ================================================== -->
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+</body>
+</html>
