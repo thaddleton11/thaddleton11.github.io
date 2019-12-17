@@ -34,7 +34,7 @@ $(function(){
 			data: $(this).serialize(),
 			success: function ( data ) {
 				if ( data == "success" ) {
-					window.location = "/admin/dashboard"
+					window.location = "index.html"
 				} else {
 					$('.admin-login').html(
 						'<p class="text-danger text-centred">Sorry, that was not possible.</p>'
